@@ -10,7 +10,7 @@ var ignore = require('ignore');
 var ignoreFiles = ['.appcacheignore'];
 
 var argv = require('yargs')
-  .usage('Usage: appcachegen directory [options]')
+  .usage('Usage: appcachegen [directory] [options]')
   .alias('o', 'output')
   .describe('o', 'Write to file')
   .alias('i', 'ignore')
