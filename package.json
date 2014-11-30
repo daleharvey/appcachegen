@@ -1,0 +1,21 @@
+{
+  "name": "appcachegen",
+  "version": "0.0.0",
+  "description": "Generate AppCache from local directory",
+  "main": "appcachegen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daleharvey/appcachegen.git"
+  },
+  "author": "Dale Harvey",
+  "license": "Apache v2",
+  "dependencies": {
+    "walk": "^2.3.4",
+    "node-dir": "^0.1.6",
+    "ignore": "^2.2.15",
+    "yargs": "^1.3.3"
+  }
+}
