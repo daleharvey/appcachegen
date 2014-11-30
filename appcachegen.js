@@ -2,24 +2,27 @@
 
 'use strict';
 
-var fs = require("fs");
+var fs = require('fs');
+var path = require('path');
 var dir = require('node-dir');
 var ignore = require('ignore');
 
 var ignoreFiles = ['.appcacheignore'];
 
 var argv = require('yargs')
-  .usage('Usage: $0 directory [options]')
+  .usage('Usage: appcachegen directory [options]')
   .alias('o', 'output')
   .describe('o', 'Write to file')
   .alias('i', 'ignore')
   .describe('i', 'Ignore file')
   .alias('r', 'rules')
-  .describe('i', 'Extra rules file')
+  .describe('r', 'Extra rules file')
+  .help('help').alias('help', 'h')
   .argv;
 
 module.exports = function(root, opts) {
 
+  root = path.normalize(root);
   var ig = ignore();
   var write = console.log;
 
@@ -42,6 +45,10 @@ module.exports = function(root, opts) {
     if (err) throw err;
 
     ig.filter(files).map(function(file) {
+      // Address files from root as subpages will often
+      // reference the manifest
+      file = '/' + path.relative(root, file);
+
       write(file);
       // If we have a file with /index.html, save an entry for / as well
       if (/\/index.html$/.test(file)) {
