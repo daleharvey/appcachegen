@@ -13,7 +13,9 @@
   "keywords": [
     "appcache",
     "html5",
-    "generator"
+    "generator",
+    "offline",
+    "webapp"
   ],
   "author": "Dale Harvey",
   "license": "Apache v2",
