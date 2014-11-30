@@ -11,7 +11,7 @@ Install
 
 to install in your project or
 
-    $ npm install -g appcachegen
+    $ sudo npm install -g appcachegen
 
 to install globally
 
