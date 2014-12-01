@@ -65,6 +65,7 @@ module.exports = function(root, opts) {
     if (opts.rulesFile) {
       var tmp = fs.readFileSync(opts.rulesFile, 'utf8');
       write(tmp);
+      write('');
       networkWritten = /NETWORK:/.test(tmp);
     }
 
