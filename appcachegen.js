@@ -40,6 +40,10 @@ module.exports = function(root, opts) {
     write = function(str) { stream.write(str + '\n'); };
   }
 
+  if (opts.rulesFile) {
+    ig.addPattern(opts.rulesFile);
+  }
+
   write('CACHE MANIFEST');
   write('# ' + new Date());
   write('');
