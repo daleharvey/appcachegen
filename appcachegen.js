@@ -26,6 +26,9 @@ module.exports = function(root, opts) {
   var ig = ignore();
   var write = console.log;
 
+  // Ignore dotfiles by default
+  ig.addPattern('.*');
+
   if (opts.ignoreFile) {
     ignoreFiles.unshift(opts.ignoreFile);
   }
