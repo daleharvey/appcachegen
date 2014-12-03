@@ -1,6 +1,6 @@
 {
   "name": "appcachegen",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Generate AppCache from local directory",
   "main": "appcachegen.js",
   "bin": {
